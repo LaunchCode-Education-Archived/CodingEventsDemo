@@ -11,7 +11,7 @@ namespace coding_events_practice.Controllers
     public class EventsController : Controller
     {
 
-        static private List<string> Events = new List<string>();
+        static private Dictionary<string, string> Events = new Dictionary<string, string>();
 
         // GET: /<controller>/
         public IActionResult Index()
@@ -28,9 +28,9 @@ namespace coding_events_practice.Controllers
 
         [HttpPost]
         [Route("Events/Add")]
-        public IActionResult NewEvent(string name)
+        public IActionResult NewEvent(string name, string desc)
         {
-            Events.Add(name);
+            Events.Add(name, desc);
 
             return Redirect("/Events");
         }
