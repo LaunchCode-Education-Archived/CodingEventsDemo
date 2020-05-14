@@ -9,5 +9,15 @@ namespace CodingEventsDemo.Models
         public Event()
         {
         }
+
+        public Event(string name)
+        {
+            Name = name;
+        }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }
