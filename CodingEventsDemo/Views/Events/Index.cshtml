@@ -1,5 +1,4 @@
-﻿
-<h1>Coding Events</h1>
+﻿<h1>Coding Events</h1>
 
 <p>
     <a asp-controller="Events" asp-action="Add">Add Event</a>
@@ -20,11 +19,10 @@ else
                 Description
             </th>
         </tr>
-        @foreach (KeyValuePair<string, string> evt in ViewBag.events)
+        @foreach (var evt in ViewBag.events)
         {
             <tr>
-                <td>@evt.Key</td>
-                <td>@evt.Value</td>
+                <td>@evt.Name</td>
             </tr>
         }
     </table>
