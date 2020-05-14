@@ -5,10 +5,6 @@ namespace CodingEventsDemo.Models
     {
         public string Name { get; set; }
 
-        public Event()
-        {
-        }
-
         public Event(string name)
         {
             Name = name;
