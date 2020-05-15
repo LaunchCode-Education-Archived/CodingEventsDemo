@@ -13,6 +13,9 @@ else
     <table class="table">
         <tr>
             <th>
+                Id
+            </th>
+            <th>
                 Name
             </th>
             <th>
@@ -22,6 +25,7 @@ else
         @foreach (var evt in ViewBag.events)
         {
             <tr>
+                <td>@evt.Id</td>
                 <td>@evt.Name</td>
                 <td>@evt.Description</td>
             </tr>
