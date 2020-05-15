@@ -24,7 +24,6 @@ namespace CodingEventsDemo.Data
         // Remove
         public static void Remove(int id)
         {
-            Event EventToRemove = GetById(id);
             Events.Remove(id);
         }
 
