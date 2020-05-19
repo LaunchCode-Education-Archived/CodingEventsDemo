@@ -1,9 +1,14 @@
 ﻿using System;
+using Microsoft.AspNetCore.Mvc;
+
 namespace CodingEventsDemo.Models
 {
     public class Event
     {
+        [FromForm(Name="name")]
         public string Name { get; set; }
+
+        [FromForm(Name="desc")]
         public string Description { get; set; }
 
         public int Id { get; }
@@ -13,6 +18,12 @@ namespace CodingEventsDemo.Models
         {
             Name = name;
             Description = description;
+            Id = nextId;
+            nextId++;
+        }
+
+        public Event()
+        {
             Id = nextId;
             nextId++;
         }
