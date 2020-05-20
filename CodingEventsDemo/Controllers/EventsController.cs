@@ -22,5 +22,13 @@ namespace coding_events_practice.Controllers
 
             return View();
         }
+
+        [HttpGet]
+        public IActionResult Add()
+        {
+            // Any additional method code here
+
+            return View();
+        }
     }
 }
