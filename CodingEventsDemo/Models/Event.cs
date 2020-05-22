@@ -5,10 +5,10 @@ namespace CodingEventsDemo.Models
 {
     public class Event
     {
-        [FromForm(Name="name")]
+        //[FromForm(Name="name")]
         public string Name { get; set; }
 
-        [FromForm(Name="desc")]
+        //[FromForm(Name="desc")]
         public string Description { get; set; }
 
         public int Id { get; }
