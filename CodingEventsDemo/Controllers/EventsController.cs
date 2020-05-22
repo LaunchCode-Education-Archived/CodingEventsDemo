@@ -32,7 +32,6 @@ namespace coding_events_practice.Controllers
         {
             EventData.Add(newEvent);
       
-
             return Redirect("/Events");
         }
 
