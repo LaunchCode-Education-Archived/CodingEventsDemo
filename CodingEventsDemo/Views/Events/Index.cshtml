@@ -20,7 +20,7 @@ else
                 Description
             </th>
         </tr>
-        @foreach (KeyValuePair<string, string> evt in ViewBag.events)
+        @foreach (var evt in ViewBag.events)
         {
             <tr>
                 <td>@evt.Key</td>
