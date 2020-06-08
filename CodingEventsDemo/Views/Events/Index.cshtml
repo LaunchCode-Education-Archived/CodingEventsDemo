@@ -1,4 +1,6 @@
-﻿<h1>Coding Events</h1>
+﻿@model List<CodingEventsDemo.Models.Event>
+
+<h1>Coding Events</h1>
 
 <p>
     <a asp-controller="Events" asp-action="Add">Add Event</a>
@@ -9,7 +11,7 @@
     <a asp-controller="Events" asp-action="Delete">Delete Event</a>
 </p>
 
-@if (ViewBag.events.Count == 0)
+@if (Model.Count == 0)
 {
     <p>No events yet!</p>
 }
@@ -27,7 +29,7 @@ else
                 Description
             </th>
         </tr>
-        @foreach (var evt in ViewBag.events)
+        @foreach (var evt in Model)
         {
             <tr>
                 <td>@evt.Id</td>
