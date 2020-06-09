@@ -13,7 +13,6 @@ namespace coding_events_practice.Controllers
 {
     public class EventsController : Controller
     {
-
         // GET: /<controller>/
         public IActionResult Index()
         {
@@ -33,16 +32,21 @@ namespace coding_events_practice.Controllers
         [Route("Events/Add")]
         public IActionResult NewEvent(AddEventViewModel addEventViewModel)
         {
-            Event newEvent = new Event
+            if (ModelState.IsValid)
             {
-                Name = addEventViewModel.Name,
-                Description = addEventViewModel.Description,
-                ContactEmail = addEventViewModel.ContactEmail
-            };
+                Event newEvent = new Event
+                {
+                    Name = addEventViewModel.Name,
+                    Description = addEventViewModel.Description,
+                    ContactEmail = addEventViewModel.ContactEmail
+                };
 
-            EventData.Add(newEvent);
-      
-            return Redirect("/Events");
+                EventData.Add(newEvent);
+
+                return Redirect("/Events");
+            }
+
+            return View("Add", addEventViewModel);
         }
 
         public IActionResult Delete()
