@@ -36,7 +36,8 @@ namespace coding_events_practice.Controllers
             Event newEvent = new Event
             {
                 Name = addEventViewModel.Name,
-                Description = addEventViewModel.Description
+                Description = addEventViewModel.Description,
+                ContactEmail = addEventViewModel.ContactEmail
             };
 
             EventData.Add(newEvent);
