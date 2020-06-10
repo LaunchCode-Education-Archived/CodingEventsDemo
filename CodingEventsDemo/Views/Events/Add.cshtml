@@ -17,5 +17,9 @@
         <label asp-for="ContactEmail">Contact Email</label>
         <input asp-for="ContactEmail" />
     </div>
+    <div class="form-group">
+        <label asp-for="Type">Event Type</label>
+        <select asp-for="Type" asp-items="Model.EventTypes"></select>
+    </div>
     <input type="submit" value="Add Event" />
 </form>
