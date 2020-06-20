@@ -30,8 +30,7 @@ namespace coding_events_practice.Controllers
         }
 
         [HttpPost]
-        [Route("Events/Add")]
-        public IActionResult NewEvent(AddEventViewModel addEventViewModel)
+        public IActionResult Add(AddEventViewModel addEventViewModel)
         {
             Event newEvent = new Event
             {
