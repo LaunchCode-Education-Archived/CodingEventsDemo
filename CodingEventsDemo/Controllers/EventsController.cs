@@ -37,7 +37,6 @@ namespace coding_events_practice.Controllers
 
         public IActionResult Delete()
         {
-            //ViewBag.title = "Delete Events";
             ViewBag.events = EventData.GetAll();
 
             return View();
