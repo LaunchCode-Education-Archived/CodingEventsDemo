@@ -3,9 +3,9 @@ namespace CodingEventsDemo.Models
 {
     public enum EventType
     {
-        CONFERENCE,
-        MEETUP,
-        WORKSHOP,
-        SOCIAL
+        Conference,
+        Meetup,
+        Workshop,
+        Social
     }
 }
