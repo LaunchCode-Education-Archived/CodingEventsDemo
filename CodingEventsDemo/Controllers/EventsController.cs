@@ -72,7 +72,7 @@ namespace coding_events_practice.Controllers
         {
             foreach (int eventId in eventIds)
             {
-                Event theEvent = context.Events.Single(c => c.Id == eventId);
+                Event theEvent = context.Events.Find(eventId);
                 context.Events.Remove(theEvent);
             }
 

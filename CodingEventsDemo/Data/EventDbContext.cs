@@ -1,5 +1,4 @@
-﻿using System;
-using CodingEventsDemo.Models;
+﻿using CodingEventsDemo.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace CodingEventsDemo.Data
