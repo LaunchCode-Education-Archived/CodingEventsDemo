@@ -10,11 +10,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CodingEventsDemo.Controllers
 {
-    public class EventTagController : Controller
+    public class TagController : Controller
     {
         private EventDbContext context;
 
-        public EventTagController(EventDbContext dbContext)
+        public TagController(EventDbContext dbContext)
         {
             context = dbContext;
         }
@@ -22,18 +22,18 @@ namespace CodingEventsDemo.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            List<EventTag> tags = context.Tags.ToList();
+            List<Tag> tags = context.Tags.ToList();
             return View(tags);
         }
 
         public IActionResult Add()
         {
-            EventTag tag = new EventTag();
+            Tag tag = new Tag();
             return View(tag);
         }
 
         [HttpPost]
-        public IActionResult Add(EventTag tag)
+        public IActionResult Add(Tag tag)
         {
             if (ModelState.IsValid)
             {

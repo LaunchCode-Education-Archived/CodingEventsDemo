@@ -1,4 +1,4 @@
-﻿@model List<CodingEventsDemo.Models.EventTag>
+﻿@model List<CodingEventsDemo.Models.Tag>
 
 <h1>All Event Tags</h1>
 
@@ -13,7 +13,7 @@ else
             <th>Id
             <th>Tag Name</th>
         </tr>
-        @foreach (EventTag tag in Model)
+        @foreach (Tag tag in Model)
         {
             <tr>
                 <td>@tag.Id</td>

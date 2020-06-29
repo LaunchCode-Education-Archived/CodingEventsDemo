@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CodingEventsDemo.Models
 {
-    public class EventTag
+    public class Tag
     {
         public int Id { get; set; }
 
@@ -11,12 +11,12 @@ namespace CodingEventsDemo.Models
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Name must be between 3 and 50 characters")]
         public string Name { get; set; }
 
-        public EventTag(string name)
+        public Tag(string name)
         {
             Name = name;
         }
 
-        public EventTag()
+        public Tag()
         {
         }
     }
