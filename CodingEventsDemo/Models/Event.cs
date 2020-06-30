@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CodingEventsDemo.Models
@@ -14,6 +15,8 @@ namespace CodingEventsDemo.Models
         public EventCategory Category { get; set; }
 
         public int CategoryId { get; set; }
+
+        public List<EventTag> EventTags { get; set; }
 
         public int Id { get; set; }
 

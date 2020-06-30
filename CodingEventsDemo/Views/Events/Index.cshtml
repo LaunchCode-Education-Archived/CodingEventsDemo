@@ -39,7 +39,7 @@ else
         {
             <tr>
                 <td>@evt.Id</td>
-                <td>@evt.Name</td>
+                <td><a asp-controller="Events" asp-action="Detail" asp-route-id="@evt.Id">@evt.Name</a></td>
                 <td>@evt.Description</td>
                 <td>@evt.ContactEmail</td>
                 <td>@evt.Category.Name</td>
