@@ -6,6 +6,7 @@ using CodingEventsDemo.Data;
 using CodingEventsDemo.Models;
 using CodingEventsDemo.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -40,7 +41,7 @@ namespace CodingEventsDemo.Controllers
             {
                 context.Tags.Add(tag);
                 context.SaveChanges();
-                return Redirect("/EventTag/");
+                return Redirect("/Tag/");
             }
 
             return View("Add", tag);
@@ -79,10 +80,21 @@ namespace CodingEventsDemo.Controllers
                     context.SaveChanges();
                 }
 
-                return Redirect("/Tag/Items/" + viewModel.TagId);
+                return Redirect("/Events/Detail/" + eventId);
             }
 
             return View(viewModel);
+        }
+
+        public IActionResult Detail(int id)
+        {
+            List<EventTag> eventTags = context.EventTags
+                .Where(et => et.TagId == id)
+                .Include(et => et.Event)
+                .Include(et => et.Tag)
+                .ToList();
+
+            return View(eventTags);
         }
 
     }
