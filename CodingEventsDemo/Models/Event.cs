@@ -15,10 +15,6 @@ namespace CodingEventsDemo.Models
 
         public int Id { get; set; }
 
-        public Event()
-        {
-        }
-
         public Event(string name, string description, string contactEmail)
         {
             Name = name;
@@ -26,7 +22,9 @@ namespace CodingEventsDemo.Models
             ContactEmail = contactEmail;
         }
 
-        
+        public Event()
+        {
+        }
 
         public override string ToString()
         {
