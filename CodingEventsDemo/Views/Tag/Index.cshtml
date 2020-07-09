@@ -1,0 +1,24 @@
+﻿@model List<CodingEventsDemo.Models.Tag>
+
+<h1>All Event Tags</h1>
+
+@if (Model.Count == 0)
+{
+    <p>No tags yet!</p>
+}
+else
+{
+    <table class="table">
+        <tr>
+            <th>Id
+            <th>Tag Name</th>
+        </tr>
+        @foreach (Tag tag in Model)
+        {
+            <tr>
+                <td>@tag.Id</td>
+                <td>@tag.Name</td>
+            </tr>
+        }
+    </table>
+}
