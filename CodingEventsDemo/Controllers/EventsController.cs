@@ -90,7 +90,12 @@ namespace coding_events_practice.Controllers
                .Include(e => e.Category)
                .Single(e => e.Id == id);
 
-            EventDetailViewModel viewModel = new EventDetailViewModel(theEvent);
+            List<EventTag> eventTags = context.EventTags
+                .Where(et => et.EventId == id)
+                .Include(et => et.Tag)
+                .ToList();
+
+            EventDetailViewModel viewModel = new EventDetailViewModel(theEvent, eventTags);
             return View(viewModel);
         }
     }
