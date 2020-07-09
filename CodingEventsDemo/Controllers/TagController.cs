@@ -88,5 +88,16 @@ namespace CodingEventsDemo.Controllers
 
             return View(viewModel);
         }
+
+        public IActionResult Detail(int id)
+        {
+            List<EventTag> eventTags = context.EventTags
+                .Where(et => et.TagId == id)
+                .Include(et => et.Event)
+                .Include(et => et.Tag)
+                .ToList();
+
+            return View(eventTags);
+        }
     }
 }
