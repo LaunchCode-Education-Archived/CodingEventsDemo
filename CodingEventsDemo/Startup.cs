@@ -27,7 +27,8 @@ namespace CodingEventsDemo
         {
             services.AddControllersWithViews();
             // services.AddDbContext<EventDbContext>(options =>
-                // options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
+            // options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +49,7 @@ namespace CodingEventsDemo
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -55,6 +57,7 @@ namespace CodingEventsDemo
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
             });
         }
     }
