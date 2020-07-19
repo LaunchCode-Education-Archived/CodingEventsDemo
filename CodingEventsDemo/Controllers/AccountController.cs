@@ -10,12 +10,11 @@ using CodingEventsDemo.ViewModels;
 
 namespace CodingEventsDemo.Controllers
 {
-    [Route("/Identity/Account")]
-    public class UserController : Controller
+    public class AccountController : Controller
     {
         private readonly UserManager<User> userManager;
 
-        public UserController(UserManager<User> u)
+        public AccountController(UserManager<User> u)
         {
             userManager = u;
         }
@@ -58,10 +57,10 @@ namespace CodingEventsDemo.Controllers
                         ModelState.TryAddModelError(error.Code, error.Description);
                     }
 
-                    return View(userRegistrationViewModel);
+                    return View("Register", userRegistrationViewModel);
                 }
             }
-            return View(userRegistrationViewModel);
+            return View("Register", userRegistrationViewModel);
         }
 
     }
