@@ -12,4 +12,7 @@
   <ItemGroup>
     <Content Remove="Views\Events\Add.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.2.4" />
+  </ItemGroup>
 </Project>
