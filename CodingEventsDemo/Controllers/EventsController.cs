@@ -14,6 +14,10 @@ namespace coding_events_practice.Controllers
 {
     public class EventsController : Controller
     {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 273616482705bf23682333d0e67a55344a2dd55a
         private EventDbContext context;
 
         public EventsController(EventDbContext dbContext)
@@ -21,11 +25,17 @@ namespace coding_events_practice.Controllers
             context = dbContext;
         }
 
+<<<<<<< HEAD
 
         // GET: /<controller>/
         public IActionResult Index()
         {
             //List<Event> events = new List<Event>(EventData.GetAll());
+=======
+        // GET: /<controller>/
+        public IActionResult Index()
+        {
+>>>>>>> 273616482705bf23682333d0e67a55344a2dd55a
             List<Event> events = context.Events
                 .Include(e => e.Category)
                 .ToList();
@@ -47,7 +57,10 @@ namespace coding_events_practice.Controllers
             if (ModelState.IsValid)
             {
                 EventCategory theCategory = context.Categories.Find(addEventViewModel.CategoryId);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 273616482705bf23682333d0e67a55344a2dd55a
                 Event newEvent = new Event
                 {
                     Name = addEventViewModel.Name,
@@ -56,10 +69,15 @@ namespace coding_events_practice.Controllers
                     Category = theCategory
                 };
 
+<<<<<<< HEAD
                 //EventData.Add(newEvent);
                 context.Events.Add(newEvent);
                 context.SaveChanges();
 
+=======
+                context.Events.Add(newEvent);
+                context.SaveChanges();
+>>>>>>> 273616482705bf23682333d0e67a55344a2dd55a
 
                 return Redirect("/Events");
             }
@@ -69,7 +87,10 @@ namespace coding_events_practice.Controllers
 
         public IActionResult Delete()
         {
+<<<<<<< HEAD
             //ViewBag.events = EventData.GetAll();
+=======
+>>>>>>> 273616482705bf23682333d0e67a55344a2dd55a
             ViewBag.events = context.Events.ToList();
 
             return View();
@@ -80,10 +101,15 @@ namespace coding_events_practice.Controllers
         {
             foreach (int eventId in eventIds)
             {
+<<<<<<< HEAD
                 //EventData.Remove(eventId);
+=======
+>>>>>>> 273616482705bf23682333d0e67a55344a2dd55a
                 Event theEvent = context.Events.Find(eventId);
                 context.Events.Remove(theEvent);
             }
+            context.SaveChanges();
+
             context.SaveChanges();
 
             return Redirect("/Events");

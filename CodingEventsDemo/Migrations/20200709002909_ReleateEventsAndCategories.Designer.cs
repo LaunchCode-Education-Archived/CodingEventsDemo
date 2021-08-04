@@ -2,24 +2,21 @@
 using CodingEventsDemo.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CodingEventsDemo.Migrations
 {
     [DbContext(typeof(EventDbContext))]
-    partial class EventDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200709002909_ReleateEventsAndCategories")]
+    partial class ReleateEventsAndCategories
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-<<<<<<< HEAD
-                .HasAnnotation("Relational:MaxIdentifierLength", 64)
-                .HasAnnotation("ProductVersion", "5.0.8");
-=======
                 .HasAnnotation("ProductVersion", "3.1.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
->>>>>>> 273616482705bf23682333d0e67a55344a2dd55a
 
             modelBuilder.Entity("CodingEventsDemo.Models.Event", b =>
                 {
@@ -31,15 +28,6 @@ namespace CodingEventsDemo.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ContactEmail")
-<<<<<<< HEAD
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("longtext");
-=======
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Description")
@@ -47,7 +35,6 @@ namespace CodingEventsDemo.Migrations
 
                     b.Property<string>("Name")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
->>>>>>> 273616482705bf23682333d0e67a55344a2dd55a
 
                     b.HasKey("Id");
 
@@ -63,11 +50,7 @@ namespace CodingEventsDemo.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
-<<<<<<< HEAD
-                        .HasColumnType("longtext");
-=======
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
->>>>>>> 273616482705bf23682333d0e67a55344a2dd55a
 
                     b.HasKey("Id");
 
@@ -77,24 +60,10 @@ namespace CodingEventsDemo.Migrations
             modelBuilder.Entity("CodingEventsDemo.Models.Event", b =>
                 {
                     b.HasOne("CodingEventsDemo.Models.EventCategory", "Category")
-<<<<<<< HEAD
-                        .WithMany("Events")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
-                });
-
-            modelBuilder.Entity("CodingEventsDemo.Models.EventCategory", b =>
-                {
-                    b.Navigation("Events");
-=======
                         .WithMany("events")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
->>>>>>> 273616482705bf23682333d0e67a55344a2dd55a
                 });
 #pragma warning restore 612, 618
         }

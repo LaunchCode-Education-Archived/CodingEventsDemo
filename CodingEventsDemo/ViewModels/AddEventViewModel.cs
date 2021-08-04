@@ -19,6 +19,7 @@ namespace CodingEventsDemo.ViewModels
         [EmailAddress]
         public string ContactEmail { get; set; }
 
+<<<<<<< HEAD
         //public EventType Type { get; set; }
         [Required(ErrorMessage = "Category is required.")]
         public int CategoryId { get; set; }
@@ -34,6 +35,14 @@ namespace CodingEventsDemo.ViewModels
 
         public AddEventViewModel(List<EventCategory> categories)
         {
+=======
+        [Required(ErrorMessage = "Category is required")]
+        public int CategoryId { get; set; }
+
+        public List<SelectListItem> Categories { get; set; }
+
+        public AddEventViewModel(List<EventCategory> categories) {
+>>>>>>> 273616482705bf23682333d0e67a55344a2dd55a
             Categories = new List<SelectListItem>();
 
             foreach (var category in categories)
@@ -43,12 +52,21 @@ namespace CodingEventsDemo.ViewModels
                     {
                         Value = category.Id.ToString(),
                         Text = category.Name
+<<<<<<< HEAD
                     });
             }
         }
         public AddEventViewModel()
         {
         }
+=======
+                    }
+                ); ;
+            }
+        }
+
+        public AddEventViewModel() { }
+>>>>>>> 273616482705bf23682333d0e67a55344a2dd55a
 
     }
 }
