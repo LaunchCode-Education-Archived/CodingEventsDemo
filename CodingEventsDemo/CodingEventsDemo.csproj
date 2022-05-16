@@ -9,7 +9,4 @@
   <ItemGroup>
     <Folder Include="Views\Events\" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Remove="Views\Events\Add.cshtml" />
-  </ItemGroup>
 </Project>
