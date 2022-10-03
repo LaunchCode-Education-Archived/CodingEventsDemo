@@ -2,12 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CodingEventsDemo.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace CodingEventsDemo
 {
@@ -24,6 +27,16 @@ namespace CodingEventsDemo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            //TODO: need to update textbook with this code here  17.2
+                // added to meet new syntax of UseMySql command
+
+            var serverVersion = new MySqlServerVersion(new Version(8, 0, 29));  
+            var dC = Configuration.GetConnectionString("DefaultConnection");
+            services.AddDbContext<EventDbContext>(options =>
+              options.UseMySql(dC, serverVersion));
+
+            //Use MySql wants objects, not strings
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
