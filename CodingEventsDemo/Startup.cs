@@ -32,9 +32,9 @@ namespace CodingEventsDemo
                 // added to meet new syntax of UseMySql command
 
             var serverVersion = new MySqlServerVersion(new Version(8, 0, 29));  
-            var dC = Configuration.GetConnectionString("DefaultConnection");
+            var defaultConnection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<EventDbContext>(options =>
-              options.UseMySql(dC, serverVersion));
+              options.UseMySql(defaultConnection, serverVersion));
 
             //Use MySql wants objects, not strings
         }

@@ -10,10 +10,12 @@
     <Folder Include="Views\Events\" />
     <Folder Include="Data\" />
     <Folder Include="ViewModels\" />
+    <Folder Include="Views\Tag\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Pomelo.EntityFrameworkCore.MySql" />
     <None Remove="Microsoft.EntityFrameworkCore.Design" />
+    <None Remove="Views\Tag\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.2" />
