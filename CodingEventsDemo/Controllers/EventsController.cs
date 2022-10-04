@@ -17,7 +17,7 @@ namespace coding_events_practice.Controllers
 
         private EventDbContext context;
 
-        public EventsController (EventDbContext dbContext)
+        public EventsController(EventDbContext dbContext)
         {
             context = dbContext;
         }
@@ -35,7 +35,6 @@ namespace coding_events_practice.Controllers
         public IActionResult Add()
         {
             List<EventCategory> categories = context.Categories.ToList();
-
             AddEventViewModel addEventViewModel = new AddEventViewModel(categories);
 
             return View(addEventViewModel);
@@ -85,7 +84,6 @@ namespace coding_events_practice.Controllers
             return Redirect("/Events");
         }
 
-        // /Events/Detail/5 
         public IActionResult Detail(int id)
         {
             Event theEvent = context.Events
@@ -94,13 +92,11 @@ namespace coding_events_practice.Controllers
 
             List<EventTag> eventTags = context.EventTags
                 .Where(et => et.EventId == id)
+                .Include(et => et.Tag)
                 .ToList();
 
             EventDetailViewModel viewModel = new EventDetailViewModel(theEvent, eventTags);
             return View(viewModel);
         }
-
-
-
     }
 }

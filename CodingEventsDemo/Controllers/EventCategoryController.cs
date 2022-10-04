@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using CodingEventsDemo.Data;
 using CodingEventsDemo.Models;
-using CodingEventsDemo.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using CodingEventsDemo.ViewModels;
+
+// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace CodingEventsDemo.Controllers
 {
@@ -17,27 +20,21 @@ namespace CodingEventsDemo.Controllers
             context = dbContext;
         }
 
-        //GET: /<controller>/
+        // GET: /<controller>/
         [HttpGet]
         public IActionResult Index()
         {
-            ViewBag.title = "All Categories";
-
             List<EventCategory> categories = context.Categories.ToList();
-
             return View(categories);
         }
 
-        //GET
         [HttpGet]
         public IActionResult Create()
         {
             AddEventCategoryViewModel addEventCategoryViewModel = new AddEventCategoryViewModel();
             return View(addEventCategoryViewModel);
-
         }
 
-        //POST
         [HttpPost]
         public IActionResult ProcessCreateEventCategoryForm(AddEventCategoryViewModel addEventCategoryViewModel)
         {
@@ -55,8 +52,6 @@ namespace CodingEventsDemo.Controllers
             }
 
             return View("Create", addEventCategoryViewModel);
-
         }
     }
 }
-

@@ -7,6 +7,7 @@ namespace CodingEventsDemo.ViewModels
 {
     public class AddEventTagViewModel
     {
+
         public int EventId { get; set; }
         public Event Event { get; set; }
 
@@ -18,23 +19,20 @@ namespace CodingEventsDemo.ViewModels
         {
             Tags = new List<SelectListItem>();
 
-            //how we update our tags
-            foreach (var Tag in possibleTags)
+            foreach (var tag in possibleTags)
             {
                 Tags.Add(new SelectListItem
                 {
-                    Value = Tag.Id.ToString(),
-                    Text = Tag.Name
+                    Value = tag.Id.ToString(),
+                    Text = tag.Name
                 });
             }
 
             Event = theEvent;
-
         }
+
         public AddEventTagViewModel()
         {
-
         }
     }
 }
-

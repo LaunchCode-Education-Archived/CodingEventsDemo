@@ -3,7 +3,6 @@
 <h1>Add Tag to Event: @Model.Event.Name</h1>
 
 <form asp-controller="Tag" asp-action="AddEvent" method="post">
-    @*hidden - doesn't render in the view'*@
     <input type="hidden" value="@Model.Event.Id" name="EventId" />
     <div class="form-group">
         <label asp-for="TagId">Tag</label>

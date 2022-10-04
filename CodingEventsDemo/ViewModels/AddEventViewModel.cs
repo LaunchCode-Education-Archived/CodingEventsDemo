@@ -19,25 +19,24 @@ namespace CodingEventsDemo.ViewModels
         [EmailAddress]
         public string ContactEmail { get; set; }
 
-        [Required(ErrorMessage ="Category is required")]
+        [Required(ErrorMessage = "Category is required")]
         public int CategoryId { get; set; }
 
         public List<SelectListItem> Categories { get; set; }
 
-       public AddEventViewModel(List<EventCategory> categories)
+        public AddEventViewModel(List<EventCategory> categories)
         {
             Categories = new List<SelectListItem>();
 
-            foreach(var categroy in categories)
+            foreach (var category in categories)
             {
                 Categories.Add(
                     new SelectListItem
                     {
-                        Value = categroy.Id.ToString(),
-                        Text = categroy.Name
-
+                        Value = category.Id.ToString(),
+                        Text = category.Name
                     }
-                    ); ;
+                ); ;
             }
         }
 

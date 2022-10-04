@@ -1,4 +1,4 @@
-﻿
+
 using System;
 using CodingEventsDemo.Models;
 using Microsoft.EntityFrameworkCore;
