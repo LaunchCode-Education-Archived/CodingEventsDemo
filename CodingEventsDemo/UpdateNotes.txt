@@ -1,0 +1,3 @@
+﻿testing CodingEventsDemo with dotnet 6, asp dotnet 6, and eventually EFC 6 and inside vs 2022
+
+Chapter 13.6  branch views-setup
