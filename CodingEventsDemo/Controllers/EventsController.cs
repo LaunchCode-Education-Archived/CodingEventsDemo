@@ -53,5 +53,27 @@ namespace coding_events_practice.Controllers
 
             return Redirect("/Events");
         }
+
+        [HttpGet]
+        [Route("Events/Edit/{eventId}")]
+        public IActionResult Edit(int eventId)
+        {
+            //controller code will go here
+            Event editingEvent = EventData.GetById(eventId);
+            ViewBag.eventToEdit = editingEvent;
+            ViewBag.title = "Edit Event " + editingEvent.Name + "(id = " + editingEvent.Id + ")";
+            return View();
+        }
+
+        [HttpPost]
+        [Route("Events/Edit")]
+        public IActionResult SubmitEditEventForm(int eventId, string name, string desc)
+        {
+            //controller code will go here
+            Event editingEvent = EventData.GetById(eventId);
+            editingEvent.Name = name;
+            editingEvent.Description = desc;
+            return Redirect("/Events");
+        }
     }
 }

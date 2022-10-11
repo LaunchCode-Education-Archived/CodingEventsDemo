@@ -17,9 +17,9 @@ else
 {
     <table class="table">
         <tr>
-            <th>
+           @* <th>
                 Id
-            </th>
+        </th>*@
             <th>
                 Name
             </th>
@@ -30,9 +30,11 @@ else
         @foreach (var evt in ViewBag.events)
         {
             <tr>
-                <td>@evt.Id</td>
+                @*<td>@evt.Id</td>*@
                 <td>@evt.Name</td>
                 <td>@evt.Description</td>
+                <td>@evt.Id</td>
+                <td><a asp-controller="Events" asp-action="Edit" asp-route-id="@evt.Id">Edit Event</a></td>
             </tr>
         }
     </table>
