@@ -13,7 +13,13 @@ namespace CodingEventsDemo.ViewModels
         [StringLength(500, ErrorMessage = "Description too long!")]
         public string Description { get; set; }
 
-        [EmailAddress]
+        [EmailAddress(ErrorMessage = "You must input a valid email address.")]
         public string ContactEmail { get; set; }
+
+        [Required(ErrorMessage = "You must enter a location.")]
+        public string Location { get; set; }
+
+        [Range(0, 100000, ErrorMessage = "You must choose a number between 0 and 100,000")]
+        public int NumberOfAttendees { get; set; }
     }
 }
