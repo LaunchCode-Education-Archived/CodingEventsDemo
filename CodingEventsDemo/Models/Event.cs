@@ -1,26 +1,26 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CodingEventsDemo.Models
 {
     public class Event
     {
+        //TODO:  need to write about adding a Key if building from scratch
+            //https://learn.microsoft.com/en-us/ef/core/modeling/keys?tabs=data-annotations
+        [Key] 
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string ContactEmail { get; set; }
-
-        public int Id { get; }
-        static private int nextId = 1;
-
+  
         public Event()
         {
-            Id = nextId;
-            nextId++;
         }
 
         public EventType Type { get; set; }
 
-        public Event(string name, string description, string contactEmail) : this()
+        public Event(string name, string description, string contactEmail)
         {
             Name = name;
             Description = description;
