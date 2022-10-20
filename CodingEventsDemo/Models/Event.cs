@@ -18,6 +18,8 @@ namespace CodingEventsDemo.Models
             nextId++;
         }
 
+        public EventType Type { get; set; }
+
         public Event(string name, string description, string contactEmail) : this()
         {
             Name = name;
