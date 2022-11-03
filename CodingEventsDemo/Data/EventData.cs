@@ -18,6 +18,7 @@ namespace CodingEventsDemo.Data
         // Add
         public static void Add(Event newEvent)
         {
+            //problem here
             Events.Add(newEvent.Id, newEvent);
         }
 

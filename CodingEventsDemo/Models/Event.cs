@@ -6,19 +6,18 @@ namespace CodingEventsDemo.Models
 {
     public class Event
     {
-        //TODO:  need to write about adding a Key if building from scratch
+        //TODO:  need to write about adding a Key if building from scratch - 17.2
             //https://learn.microsoft.com/en-us/ef/core/modeling/keys?tabs=data-annotations
         [Key] 
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string ContactEmail { get; set; }
-  
+        public EventType Type { get; set; }
+
         public Event()
         {
         }
-
-        public EventType Type { get; set; }
 
         public Event(string name, string description, string contactEmail)
         {
