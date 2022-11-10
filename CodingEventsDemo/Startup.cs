@@ -10,6 +10,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+//using MySql.Data.EntityFrameworkCore;
 
 namespace CodingEventsDemo
 {
@@ -27,11 +30,11 @@ namespace CodingEventsDemo
         {
             services.AddControllersWithViews();
 
-            var serverVersion = new MySqlServerVersion(new Version(8, 0, 29));
-            var defaultConnection = Configuration.GetConnectionString("DefaultConnection");
+           var serverVersion = new MySqlServerVersion(new Version(8, 0, 29));
+           var connectionString = "server=localhost;user=NewCodingEventsDemo;password=NewCodingEventsDemo;database=NewCodingEventsDemo";
 
             services.AddDbContext<EventDbContext>(options =>
-              options.UseMySql(defaultConnection, serverVersion));
+                options.UseMySql(connectionString, serverVersion));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

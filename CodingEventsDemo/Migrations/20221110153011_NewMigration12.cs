@@ -4,7 +4,7 @@
 
 namespace CodingEventsDemo.Migrations
 {
-    public partial class testMigration : Migration
+    public partial class NewMigration12 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

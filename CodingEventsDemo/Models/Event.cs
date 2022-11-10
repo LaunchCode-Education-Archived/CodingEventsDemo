@@ -1,18 +1,20 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CodingEventsDemo.Models
 {
     public class Event
     {
-        //TODO:  need to write about adding a Key if building from scratch - 17.2
-            //https://learn.microsoft.com/en-us/ef/core/modeling/keys?tabs=data-annotations
-        [Key] 
-        public int Id { get; set; }
+        public int ID { get; set; } 
+        
         public string Name { get; set; }
+
         public string Description { get; set; }
+
         public string ContactEmail { get; set; }
+
         public EventType Type { get; set; }
 
         public Event()
@@ -26,6 +28,8 @@ namespace CodingEventsDemo.Models
             ContactEmail = contactEmail;
         }
 
+
+
         public override string ToString()
         {
             return Name;
@@ -33,13 +37,13 @@ namespace CodingEventsDemo.Models
 
         public override bool Equals(object obj)
         {
-            return obj is Event @event &&
-                   Id == @event.Id;
+            return obj is Event @e &&
+                   ID == @e.ID;
         }
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(Id);
+            return HashCode.Combine(ID);
         }
     }
 }
