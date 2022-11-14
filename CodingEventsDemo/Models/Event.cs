@@ -7,6 +7,7 @@ namespace CodingEventsDemo.Models
     {
         public string Name { get; set; }
 
+        //[FromForm(Name="desc")]
         public string Description { get; set; }
 
         public int Id { get; }
@@ -22,6 +23,7 @@ namespace CodingEventsDemo.Models
         {
             Name = name;
             Description = description;
+
         }
 
         public override string ToString()
