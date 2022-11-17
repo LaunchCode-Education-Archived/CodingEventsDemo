@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CodingEventsDemo.Data;
 using CodingEventsDemo.Models;
+using CodingEventsDemo.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using CodingEventsDemo.ViewModels;
 
