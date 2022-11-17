@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace CodingEventsDemo
 {
@@ -27,7 +28,7 @@ namespace CodingEventsDemo
         {
             services.AddControllersWithViews();
             services.AddDbContext<EventDbContext>(options =>
-                options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseMySql(Configuration.GetConnectionString("DefaultConnection"), new MySqlServerVersion(new Version())));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
