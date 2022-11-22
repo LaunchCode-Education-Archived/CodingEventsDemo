@@ -36,7 +36,7 @@ namespace CodingEventsDemo.ViewModels
                         Value = category.Id.ToString(),
                         Text = category.Name
                     }
-                  ); ;
+                  );
             }
         }
         public AddEventViewModel()
