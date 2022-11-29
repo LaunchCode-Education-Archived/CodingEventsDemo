@@ -26,8 +26,13 @@ namespace CodingEventsDemo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<EventDbContext>(options =>
-                options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
+
+            //updated syntax (used with NuGet package: Pomelo v6.0.2)
+            var connectionString = "server=localhost;userid=coding_events;password=Learn2code!;database=coding_events;";
+            var serverVersion = new MySqlServerVersion(new Version(8, 0, 29));
+            services.AddDbContext<EventDbContext>(
+                  dbContextOptions => dbContextOptions
+                  .UseMySql(connectionString, serverVersion));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
